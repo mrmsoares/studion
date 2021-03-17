@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap");
+
+:root {
+  /* criando uma variável para cor primária */
+  --color-primary: #ffc500;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+body {
+  margin: 0;
+  padding-top: 7.75rem;
+}
+
+.navbar {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  align-items: center;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 7.75rem;
+  padding: 0 1rem;
+
+  /* vermelho / verde / azul / transparência */
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar__links {
+  justify-self: end;
+}
+
+.navbar__links li {
+  /* Divida o valor em px da fonte pelo valor em px das fontes do documento para ter o resultado em rem. Então 14px / 16px = 0.875rem */
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  margin-right: 3.125rem;
+}
+
+.navbar__links a {
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__links a:hover {
+  /* utilizando uma variável para cor primária */
+  color: var(--color-primary);
+}
+
+.logo-studion {
+  font-size: 2.375rem;
+  font-weight: 900;
+  /* Espaço vertical entre textos. */
+  line-height: 1ch; /* relativa ao tamanho da altura do glifo 0 da fonte*/
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.logo-studion__subtitle {
+  font-weight: 300;
+  /* Alinhar o subtítulo na direita. */
+  /*float: right;*/
+  font-size: 0.875rem;
+}
+
+.copy--primary {
+  color: var(--color-primary);
+}
