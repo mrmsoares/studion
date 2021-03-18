@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap");
 
 :root {
-  /* criando uma variável para cor primária */
-  --color-primary: #ffc500;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  /* criando uma variável para cor primária */
+  --color-primary: #ffc500;
+  /* criando uma variável para padding padrão. Siga a ordem de cascata, defindo a sequência do código sempre abaixo um do outro. */
+  --default-padding: 1rem;
 }
 
 * {
@@ -24,6 +26,7 @@ body {
 
 .navbar {
   position: fixed;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 9fr;
   align-items: center;
@@ -79,4 +82,69 @@ body {
 
 .copy--primary {
   color: var(--color-primary);
+}
+
+/* Início da configuração do HEADER */
+#slider {
+  background-color: #000;
+  color: #fff;
+}
+
+.slide {
+  /* Para calcular o preenchimento do espaço restante em tela, calcule a altura total da tela menos a altura do item antecessor. No caso, vamos diminuir pegando a altura do nav que foi de 7.75rem */
+  height: calc(100vh - 7.75rem);
+  position: relative;
+}
+
+.slide__background-image {
+  width: 100%;
+  height: 100%;
+  /* Nova propriedade do CSS */
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide__copy {
+  position: absolute;
+  top: 6.25rem;
+  left: 50vw;
+}
+
+.slide__copy h6 {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1875rem;
+}
+
+.slide__copy h2 {
+  font-size: 6.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 6.25rem;
+}
+
+.slide__copy h2 span {
+  display: block;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+  border: 0.125rem solid #fff;
+  color: var(--color-primary);
+  background: unset;
+  border-radius: 3.525rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s all ease;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: #fff;
 }
